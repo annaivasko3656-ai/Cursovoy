@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка LEGO - Интернет-магазин LEGO Беларусь</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+       <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="header-logo">
+                <svg width="60" height="54" viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="260" height="240" fill="#e3000b" />
+                    <path d="M130 210 L55 125 A45 45 0 0 1 110 70 L130 90 L150 70 A45 45 0 0 1 205 125 Z" fill="#e3262f" stroke="#000" stroke-width="4"/>
+                    <line x1="75" y1="145" x2="135" y2="85" stroke="#000" stroke-width="4"/>
+                    <circle cx="88" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="172" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="110" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="165" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="170" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="105" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                </svg>
+                <span class="logo">LEGO</span>
+            </a>
+
+
+            <nav class="header-nav">
+                <a href="catalog.html" class="header-nav-link">Каталог</a>
+                <a href="delivery.html" class="header-nav-link active">Доставка</a>
+                <a href="help.html" class="header-nav-link">Помощь</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="cart.html" class="header-cart">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="header-cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Доставка и оплата</h1>
+                <p>Условия доставки по Минску и Беларуси, способы оплаты</p>
+            </div>
+        </section>
+
+        <!-- Delivery Info -->
+        <section class="catalog">
+            <div class="container">
+                <div class="catalog-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg);">
+                    
+                    <div class="card">
+                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem; background: var(--gray-light);">
+                            <img src="assets/images/del1.png" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Доставка по Минску</h3>
+                            <p style="color: var(--gray-dark); margin-bottom: var(--spacing-sm);">
+                                Срок: 1-2 рабочих дня<br>
+                                Стоимость: <strong>5 руб.</strong><br>
+                                Бесплатно от <strong>100 руб.</strong>
+                            </p>
+                            <p style="font-size: 0.9rem; color: var(--gray-dark);">
+                                Курьер доставит ваш заказ в удобное время с 10:00 до 21:00.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem; background: var(--gray-light);">
+                             <img src="assets/images/map.png" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Доставка по Беларуси</h3>
+                            <p style="color: var(--gray-dark); margin-bottom: var(--spacing-sm);">
+                                Срок: 2-5 рабочих дней<br>
+                                Стоимость: <strong>10 руб.</strong><br>
+                                Бесплатно от <strong>200 руб.</strong>
+                            </p>
+                            <p style="font-size: 0.9rem; color: var(--gray-dark);">
+                                Отправка через Единую систему перевозок (ЕСП) или почту.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem; background: var(--gray-light);">
+                             <img src="assets/images/packet.png" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Самовывоз</h3>
+                            <p style="color: var(--gray-dark); margin-bottom: var(--spacing-sm);">
+                                Срок: Готов в день заказа<br>
+                                Стоимость: <strong>Бесплатно</strong>
+                            </p>
+                            <p style="font-size: 0.9rem; color: var(--gray-dark);">
+                                г. Минск, пр. Независимости, 100<br>
+                                Ежедневно: 10:00 - 21:00
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Methods -->
+        <section class="catalog" style="padding-top: 0;">
+            <div class="container">
+                <h2 id="payment-title" class="text-center mb-lg">Способы оплаты</h2>
+                <div class="catalog-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">
+                                 <img src="assets/images/card.png" style="border-radius: 0;width: auto;height: 50px;" class="card-image">
+                            </div>
+                            <h3 class="card-title">Банковская карта</h3>
+                            <p style="color: var(--gray-dark);">Visa, Mastercard, Белкарт</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">
+                                <img src="assets/images/phone.png" style="border-radius: 0;width: auto;height: 50px;" class="card-image">
+                            </div>
+                            <h3 class="card-title">ЕРИП</h3>
+                            <p style="color: var(--gray-dark);">Оплата через банковское приложение</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">
+                                <img src="assets/images/money.png" style="border-radius: 0;width: auto;height: 50px;" class="card-image">
+                            </div>
+                            <h3 class="card-title">Наложенный платеж</h3>
+                            <p style="color: var(--gray-dark);">Оплата при получении (почта)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Details -->
+        <section class="contacts" style="padding-top: 0;">
+            <div class="container">
+                <div class="contacts-grid">
+                    <div class="contacts-info">
+                        <h2>Важная информация</h2>
+                        <div class="contacts-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <div>
+                                <h3 style="margin-bottom: 0.25rem;">Верность товару</h3>
+                                <p style="font-size: 0.9rem; color: var(--gray-dark);">Только оригинальные наборы LEGO с официальной гарантией</p>
+                            </div>
+                        </div>
+                        <div class="contacts-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div>
+                                <h3 style="margin-bottom: 0.25rem;">Круглосуточная поддержка</h3>
+                                <p style="font-size: 0.9rem; color: var(--gray-dark);">Отвечаем на все вопросы по доставке и заказам</p>
+                            </div>
+                        </div>
+                        <div class="contacts-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                <line x1="12" y1="19" x2="12" y2="23"/>
+                                <line x1="8" y1="23" x2="16" y2="23"/>
+                            </svg>
+                            <div>
+                                <h3 style="margin-bottom: 0.25rem;">Аккуратная упаковка</h3>
+                                <p style="font-size: 0.9rem; color: var(--gray-dark);">Все наборы тщательно упаковываются перед отправкой</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts-map" style="background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), var(--gray-light) url('assets/images/mapMinsk.png') center/cover no-repeat; border-radius: var(--radius-lg); padding: var(--spacing-lg); display: flex; flex-direction: column; justify-content: center; position: relative; min-height: 200px;">
+                        <div style="position: relative; z-index: 2;">
+                            <h3 style="text-align: center; margin-bottom: var(--spacing-lg);">Наш офис в Минске</h3>
+                            <p style="text-align: center; color: var(--gray-dark); margin-bottom: var(--spacing-sm);">г. Минск, пр. Независимости, 100</p>
+                            <p style="text-align: center; color: var(--gray-dark);">пн-пт: 10:00-21:00, сб-вс: 11:00-19:00</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
+

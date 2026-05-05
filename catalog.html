@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог LEGO - Интернет-магазин LEGO Беларусь</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+      <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="header-logo">
+              <svg width="60" height="54" viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="260" height="240" fill="#e3000b" />
+                    <path d="M130 210 L55 125 A45 45 0 0 1 110 70 L130 90 L150 70 A45 45 0 0 1 205 125 Z" fill="#e3262f" stroke="#000" stroke-width="4"/>
+                    <line x1="75" y1="145" x2="135" y2="85" stroke="#000" stroke-width="4"/>
+                    <circle cx="88" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="172" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="110" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="165" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="170" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="105" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                </svg>
+                <span class="logo">LEGO</span>
+            </a>
+
+
+             <nav class="header-nav">
+                 <a href="catalog.html" class="header-nav-link active">Каталог</a>
+                 <a href="delivery.html" class="header-nav-link">Доставка</a>
+                 <a href="help.html" class="header-nav-link">Помощь</a>
+             </nav>
+
+            <div class="header-actions">
+                <a href="cart.html" class="header-cart">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="header-cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Каталог LEGO</h1>
+                <p>Выберите конструктор из нашей обширной коллекции</p>
+            </div>
+        </section>
+
+        <!-- Catalog Filters -->
+        <section class="catalog">
+            <div class="container">
+                <div class="catalog-header">
+                    <h2 id="catalog-title" class="catalog-title">Все товары</h2>
+
+                    <div class="catalog-filters">
+                        <select id="category-filter" class="form-select">
+                            <option value="all">Все категории</option>
+                            <option value="city">LEGO City</option>
+                            <option value="star-wars">LEGO Star Wars</option>
+                            <option value="technic">LEGO Technic</option>
+                            <option value="creator">LEGO Creator</option>
+                            <option value="friends">LEGO Friends</option>
+                            <option value="duplo">LEGO Duplo</option>
+                            <option value="architecture">LEGO Architecture</option>
+                            <option value="minifigures">Minifigures</option>
+                        </select>
+
+                        <select id="sort-filter" class="form-select">
+                            <option value="name">По названию</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="pieces">Количество деталей</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="catalog-grid" id="catalog-grid">
+                    <!-- Products will be loaded dynamically by JavaScript -->
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading" class="text-center" style="padding: 3rem 0; display: none;">
+                    <div class="spinner"></div>
+                    <p>Загрузка товаров...</p>
+                </div>
+
+                <!-- No Results -->
+                <div id="no-results" class="text-center" style="padding: 3rem 0; display: none;">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <h3>Товары не найдены</h3>
+                    <p>Попробуйте изменить параметры фильтра</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
+

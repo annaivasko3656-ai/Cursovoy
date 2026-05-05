@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Интернет-магазин LEGO Беларусь</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+      <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="header-logo">
+                <svg width="60" height="54" viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="260" height="240" fill="#e3000b" />
+                    <path d="M130 210 L55 125 A45 45 0 0 1 110 70 L130 90 L150 70 A45 45 0 0 1 205 125 Z" fill="#e3262f" stroke="#000" stroke-width="4"/>
+                    <line x1="75" y1="145" x2="135" y2="85" stroke="#000" stroke-width="4"/>
+                    <circle cx="88" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="172" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="110" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="165" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="170" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="105" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                </svg>
+                <span class="logo">LEGO</span>
+            </a>
+
+
+             <nav class="header-nav">
+                 <a href="catalog.html" class="header-nav-link">Каталог</a>
+                 <a href="delivery.html" class="header-nav-link">Доставка</a>
+                 <a href="help.html" class="header-nav-link">Помощь</a>
+             </nav>
+
+            <div class="header-actions">
+                <a href="cart.html" class="header-cart active">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="header-cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Корзина</h1>
+                <p>Проверьте выбранные товары и оформите заказ</p>
+            </div>
+        </section>
+
+        <section class="cart">
+            <div class="container">
+                <div id="empty-cart" class="cart-empty">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <h2>Корзина пуста</h2>
+                    <p class="mb-lg">Вы пока не добавили товары в корзину</p>
+                    <a href="catalog.html" class="btn btn--primary btn--large">Перейти в каталог</a>
+                </div>
+
+                <!--Товары-->
+                <div id="cart-content" style="display: none;">
+                    <form id="cart-form">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Товар</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items">
+                                <!--Загрузка через js-->
+                            </tbody>
+                        </table>
+
+                        <div class="cart-summary">
+                            <h3>Итого</h3>
+                            <div class="cart-summary-row">
+                                <span>Товаров:</span>
+                                <span id="total-items">0</span>
+                            </div>
+                            <div class="cart-summary-row">
+                                <span>Сумма:</span>
+                                <span id="total-price">0.00 BYN</span>
+                            </div>
+                            <div class="cart-summary-row">
+                                <span>Доставка:</span>
+                                <span id="shipping-cost">0.00 BYN</span>
+                            </div>
+                            <div class="cart-summary-row cart-summary-total">
+                                <span>К оплате:</span>
+                                <span id="grand-total">0.00 BYN</span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-xl text-center" style="position: absolute;right: 5%;">
+                        <a href="catalog.html" class="btn btn--outline">Продолжить покупки</a>
+                        <button type="submit" class="btn btn--primary btn--large">Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
+

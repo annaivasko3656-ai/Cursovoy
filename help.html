@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь - Интернет-магазин LEGO Беларусь</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body class="page-help">
+    <!--Хедер-->
+      <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="header-logo">
+              <svg width="60" height="54" viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="260" height="240" fill="#e3000b" />
+                    <path d="M130 210 L55 125 A45 45 0 0 1 110 70 L130 90 L150 70 A45 45 0 0 1 205 125 Z" fill="#e3262f" stroke="#000" stroke-width="4"/>
+                    <line x1="75" y1="145" x2="135" y2="85" stroke="#000" stroke-width="4"/>
+                    <circle cx="88" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="172" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="110" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="165" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="170" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="105" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                </svg>
+                <span class="logo">LEGO</span>
+            </a>
+
+
+            <nav class="header-nav">
+                <a href="catalog.html" class="header-nav-link">Каталог</a>
+                <a href="delivery.html" class="header-nav-link">Доставка</a>
+                <a href="help.html" class="header-nav-link active">Помощь</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="cart.html" class="header-cart">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="header-cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!--Главный баннер-->
+        <section class="page-header">
+            <div class="container">
+                <h1>Частые вопросы</h1>
+                <p>Ответы на самые популярные вопросы о покупке и доставке LEGO</p>
+            </div>
+        </section>
+
+        <!--Вопросы-->
+        <section class="catalog" style="position: relative;">
+            <div class="container">
+                <h2 id="faq-title" class="sr-only">Частые вопросы</h2>
+                
+                <div class="catalog-grid" style="grid-template-columns: 1fr;">
+                    
+                    <div class="faq-card">
+                        <div class="card-body">
+                            <button class="question-toggle" aria-expanded="false">
+                                <h3 class="card-title" style="margin-bottom: 0;">Как оформить заказ на сайте?</h3>
+                                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="question-content">
+                                <p>
+                                    1. Добавьте нужные наборы в корзину<br>
+                                    2. Перейдите в корзину и проверьте выбранные товары<br>
+                                    3. Укажите свои контактные данные и адрес доставки<br>
+                                    4. Выберите способ оплаты<br>
+                                    5. Подтвердите заказ<br>
+                                    Наш менеджер свяжется с вами для подтверждения деталей.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="card-body">
+                            <button class="question-toggle" aria-expanded="false">
+                                <h3 class="card-title" style="margin-bottom: 0;">Как долго осуществляется доставка?</h3>
+                                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="question-content">
+                                <p>
+                                    <strong>По Минску:</strong> 1-2 рабочих дня<br>
+                                    <strong>По областям Беларуси:</strong> 2-5 рабочих дней<br><br>
+                                    Сроки могут незначительно увеличиваться в праздничные дни и период высокого спроса.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="card-body">
+                            <button class="question-toggle" aria-expanded="false">
+                                <h3 class="card-title" style="margin-bottom: 0;">Какие способы оплаты доступны?</h3>
+                                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="question-content">
+                                <p>
+                                    • Банковские карты (Visa, Mastercard, Белкарт)<br>
+                                    • Система ЕРИП<br>
+                                    • Наложенный платеж (при получении через почту)<br>
+                                    • Оплата наличными или картой при самовывозе
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="card-body">
+                            <button class="question-toggle" aria-expanded="false">
+                                <h3 class="card-title" style="margin-bottom: 0;">Можно ли вернуть или обменять товар?</h3>
+                                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="question-content">
+                                <p>
+                                    Да, в соответствии с законодательством Республики Беларусь, вы можете вернуть товар в течение 14 дней с момента получения, если он не подошел или имеет заводской брак. Товар должен быть в полной комплектации с оригинальной упаковкой. Обмен возможен при наличии соответствующего товара на складе.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="card-body">
+                            <button class="question-toggle" aria-expanded="false">
+                                <h3 class="card-title" style="margin-bottom: 0;">Как проверить подлинность набора LEGO?</h3>
+                                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="question-content">
+                                <p>
+                                    Все наши наборы LEGO - 100% оригиналы. Проверить подлинность можно по:<br>
+                                    • Качеству печати и сборки<br>
+                                    • Наличию голограммы на коробке<br>
+                                    • Штрих-коду и логотипам LEGO<br>
+                                    • Сертификату качества, который мы предоставляем<br><br>
+                                    Мы гарантируем подлинность всей продаваемой продукции.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="card-body">
+                            <button class="question-toggle" aria-expanded="false">
+                                <h3 class="card-title" style="margin-bottom: 0;">Как узнать о новых поступлениях и акциях?</h3>
+                                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="question-content">
+                                <p>
+                                    Подписывайтесь на наши соцсети и оформляйте email-рассылку на сайте. Мы регулярно публикуем информацию о новых коллекциях, скидках и эксклюзивных предложениях.
+                                </p>
+                            </div>
+                        </div>
+                       </div>
+                </div>
+                
+                <div style="position: absolute; right: 8%; bottom:8%; display: flex; align-items: flex-end; justify-content: flex-end; pointer-events: none;">
+                    <img src="assets/svg/hello.svg" style="width: 420px; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <!--Контакты-->
+        <section class="contacts" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="text-center mb-lg">Нужна дополнительная помощь?</h2>
+                <p class="text-center mb-lg" style="color: var(--gray-dark); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Наши менеджеры готовы ответить на все ваши вопросы и помочь с оформлением заказа.
+                </p>
+                <div class="contacts-grid">
+                    <div class="contacts-info">
+                        <div class="contacts-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div>
+                                <h3 style="margin-bottom: 0.25rem;">Телефон</h3>
+                                <p style="font-size: 0.9rem; color: var(--gray-dark);">+375 (17) 123-45-67</p>
+                                <p style="font-size: 0.8rem; color: var(--gray-dark);">ежедневно 10:00 - 21:00</p>
+                            </div>
+                        </div>
+                        <div class="contacts-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div>
+                                <h3 style="margin-bottom: 0.25rem;">Email</h3>
+                                <p style="font-size: 0.9rem; color: var(--gray-dark);">info@lego-belarus.by</p>
+                                <p style="font-size: 0.8rem; color: var(--gray-dark);">ответ в течение 1-2 часов</p>
+                            </div>
+                        </div>
+                        <div class="contacts-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <div>
+                                <h3 style="margin-bottom: 0.25rem;">Офис в Минске</h3>
+                                <p style="font-size: 0.9rem; color: var(--gray-dark);">г. Минск, пр. Независимости, 100</p>
+                                <p style="font-size: 0.8rem; color: var(--gray-dark);">пн-пт: 10:00-21:00, сб-вс: 11:00-19:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts-map" style="background: var(--gray-light); border-radius: var(--radius-lg); padding: var(--spacing-lg); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <h3 style="text-align: center; margin-bottom: var(--spacing-md);">Онлайн-чат</h3>
+                        <p style="color: var(--gray-dark); margin-bottom: var(--spacing-lg);">
+                            Задайте вопрос нашему менеджеру<br>
+                            в режиме реального времени
+                        </p>
+                        <a href="https://www.lego.com/service/contact-us" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                            Написать в чат
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!--JavaScript-->
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
+

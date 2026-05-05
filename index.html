@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Добро пожаловать в мир Lego!</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+    <!--Хедер-->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="header-logo">
+                <svg width="60" height="54" viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="260" height="240" fill="#e3000b" />
+                    <path d="M130 210 L55 125 A45 45 0 0 1 110 70 L130 90 L150 70 A45 45 0 0 1 205 125 Z" fill="#e3262f" stroke="#000" stroke-width="4"/>
+                    <line x1="75" y1="145" x2="135" y2="85" stroke="#000" stroke-width="4"/>
+                    <circle cx="88" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="172" cy="102" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="110" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="165" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="135" cy="170" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                    <circle cx="105" cy="140" r="12" fill="#e3000b" stroke="#000" stroke-width="3"/>
+                </svg>
+                <span class="logo">LEGO</span>
+            </a>
+
+             <!--Nav-->
+             <nav class="header-nav" id="main-menu">
+                 <a href="catalog.html" class="header-nav-link">Каталог</a>
+                 <a href="delivery.html" class="header-nav-link">Доставка</a>
+                 <a href="help.html" class="header-nav-link">Помощь</a>
+             </nav>
+
+            <!--Корзина-->
+            <div class="header-actions">
+                <a href="cart.html" class="header-cart">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="header-cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Главный баннер -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">Твори, строй, мечтай с LEGO</h1>
+                    <p class="hero-subtitle">
+                        Огромный выбор конструкторов для детей и взрослых. Официальные наборы LEGO с доставкой по Минску и всей Беларуси.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="catalog.html" class="btn-primary">Перейти в каталог</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/svg/man.jpg" class="shop">
+                    <img src="assets/svg/shop.jpg" class="shop2">
+                </div>
+            </div>
+        </section>
+
+        <!-- Категории -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 id="categories-title" class="text-center mb-lg">Популярные категории</h2>
+                <div class="catalog-grid" id="categories-grid">
+                    <!-- Загрузка через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Рекомендуемые наборы -->
+        <section class="featured-section" style="background-color: var(--dark-gray); border: 15px dotted white;">
+            <div class="container">
+                <h2 id="featured-title" class="text-center mb-lg">Рекомендуемые наборы</h2>
+                <div class="catalog-grid" id="featured-grid">
+        <div id="featured-grid" class="catalog-grid featured-grid">
+    
+    <!-- Карточка товара 1 -->
+    <div class="product-card" data-id="1">
+        <div class="product-card-content">
+            <h3 class="product-card-title">LEGO Star Wars Millennium Falcon</h3>
+            <div class="product-card-category">Star Wars</div>
+            <div class="product-card-price">
+                $149.99
+            </div>
+            <button class="product-card-button add-to-cart" data-id="1">
+                 В корзину
+            </button>
+        </div>
+    </div>
+
+    <!-- Карточка товара 2 -->
+    <div class="product-card" data-id="2">
+        <div class="product-card-content">
+            <h3 class="product-card-title">LEGO City Police Station</h3>
+            <div class="product-card-category">City</div>
+            <div class="product-card-price">
+                $89.99
+            </div>
+            <button class="product-card-button add-to-cart" data-id="2">
+                В корзину
+            </button>
+        </div>
+    </div>
+
+    <!-- Карточка товара 3 -->
+    <div class="product-card" data-id="3">
+        <div class="product-card-content">
+            <h3 class="product-card-title">LEGO Technic Bugatti Chiron</h3>
+            <div class="product-card-category">Technic</div>
+            <div class="product-card-price">
+                $349.99
+            </div>
+            <button class="product-card-button add-to-cart" data-id="3">
+                 В корзину
+            </button>
+        </div>
+    </div>
+
+    <!-- Карточка товара 4 -->
+    <div class="product-card" data-id="4">
+        <div class="product-card-content">
+            <h3 class="product-card-title">LEGO Harry Potter Hogwarts Castle</h3>
+            <div class="product-card-category">Harry Potter</div>
+            <div class="product-card-price">
+                $399.99
+            </div>
+            <button class="product-card-button add-to-cart" data-id="4">
+                 В корзину
+            </button>
+        </div>
+    </div>
+
+    <!-- Карточка товара 5 -->
+    <div class="product-card" data-id="5">
+        <div class="product-card-content">
+            <h3 class="product-card-title">LEGO Minecraft The Cave</h3>
+            <div class="product-card-category">Minecraft</div>
+            <div class="product-card-price">
+                $79.99
+            </div>
+            <button class="product-card-button add-to-cart" data-id="5">
+                В корзину
+            </button>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="advantages-section">
+                <h2 id="advantages-title" class="text-center mb-lg">Почему выбирают нас</h2>
+                <div class="catalog-grid">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                            <h3 class="card-title mt-md">Быстрая доставка</h3>
+                            <p>Доставка по Минску за 1-2 дня, по Беларуси 2-5 дней</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <h3 class="card-title mt-md">Оригинальный товар</h3>
+                            <p>Только оригинальные наборы LEGO с гарантией качества</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                            <h3 class="card-title mt-md">Лучшие отзывы</h3>
+                            <p>Тысячи довольных клиентов по всей Беларуси</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                <line x1="12" y1="19" x2="12" y2="23"/>
+                                <line x1="8" y1="23" x2="16" y2="23"/>
+                            </svg>
+                            <h3 class="card-title mt-md">Поддержка 24/7</h3>
+                            <p>Ответим на любые вопросы в любое время суток</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!--Новости-->
+        <section class="intro-sections" style="margin-top: 80px;">
+                <h2 class="section-title"style="margin-left: 40px;">Новости и акции</h2>
+                <div id="news-accordion" class="news-accordion">
+
+                     <div class="news-card">
+                         <div class="news-card-header">
+                             <h3 class="news-card-title">LEGO Fan Weekend 2026: присоединяйтесь!</h3>
+                             <span class="news-card-toggle">+</span>
+                         </div>
+                         <div class="news-card-body">
+                             <p class="news-card-excerpt">10-12 мая на Примаковском лугу пройдёт крупнейшее сборище LEGO-энтузиастов Беларуси. Треxton дневная программа включает конкурс авторских MOC-созданий с ценными призами, зону обмена редких деталей, масштабную фоторамку 4×4 метра для памятных фото, серию мастер-классов от опытных AFOL (Adult Fans of LEGO) и эксклюзивные сувениры от организоров. Вход свободный для всех посетителей. Обязательная предварительная регистрация на официальном сайте.</p>
+                         </div>
+                     </div>
+                    <div class="news-card">
+                         <div class="news-card-header">
+                             <h3 class="news-card-title">LEGO Fan Weekend 2026: присоединяйтесь!</h3>
+                             <span class="news-card-toggle">+</span>
+                         </div>
+                         <div class="news-card-body">
+                             <p class="news-card-excerpt">10-12 мая на Примаковском лугу пройдёт крупнейшее сборище LEGO-энтузиастов Беларуси. Треxton дневная программа включает конкурс авторских MOC-созданий с ценными призами, зону обмена редких деталей, масштабную фоторамку 4×4 метра для памятных фото, серию мастер-классов от опытных AFOL (Adult Fans of LEGO) и эксклюзивные сувениры от организоров. Вход свободный для всех посетителей. Обязательная предварительная регистрация на официальном сайте.</p>
+                         </div>
+                     </div>
+                      <div class="news-card">
+                         <div class="news-card-header">
+                             <h3 class="news-card-title">LEGO Fan Weekend 2026: присоединяйтесь!</h3>
+                             <span class="news-card-toggle">+</span>
+                         </div>
+                         <div class="news-card-body">
+                             <p class="news-card-excerpt">10-12 мая на Примаковском лугу пройдёт крупнейшее сборище LEGO-энтузиастов Беларуси. Треxton дневная программа включает конкурс авторских MOC-созданий с ценными призами, зону обмена редких деталей, масштабную фоторамку 4×4 метра для памятных фото, серию мастер-классов от опытных AFOL (Adult Fans of LEGO) и эксклюзивные сувениры от организоров. Вход свободный для всех посетителей. Обязательная предварительная регистрация на официальном сайте.</p>
+                         </div>
+                     </div>
+                      <div class="news-card">
+                         <div class="news-card-header">
+                             <h3 class="news-card-title">LEGO Fan Weekend 2026: присоединяйтесь!</h3>
+                             <span class="news-card-toggle">+</span>
+                         </div>
+                         <div class="news-card-body">
+                             <p class="news-card-excerpt">10-12 мая на Примаковском лугу пройдёт крупнейшее сборище LEGO-энтузиастов Беларуси. Треxton дневная программа включает конкурс авторских MOC-созданий с ценными призами, зону обмена редких деталей, масштабную фоторамку 4×4 метра для памятных фото, серию мастер-классов от опытных AFOL (Adult Fans of LEGO) и эксклюзивные сувениры от организоров. Вход свободный для всех посетителей. Обязательная предварительная регистрация на официальном сайте.</p>
+                         </div>
+                     </div>
+                     <div class="news-card">
+                         <div class="news-card-header">
+                             <h3 class="news-card-title">LEGO Fan Weekend 2026: присоединяйтесь!</h3>
+                             <span class="news-card-toggle">+</span>
+                         </div>
+                         <div class="news-card-body">
+                             <p class="news-card-excerpt">10-12 мая на Примаковском лугу пройдёт крупнейшее сборище LEGO-энтузиастов Беларуси. Треxton дневная программа включает конкурс авторских MOC-созданий с ценными призами, зону обмена редких деталей, масштабную фоторамку 4×4 метра для памятных фото, серию мастер-классов от опытных AFOL (Adult Fans of LEGO) и эксклюзивные сувениры от организоров. Вход свободный для всех посетителей. Обязательная предварительная регистрация на официальном сайте.</p>
+                         </div>
+                     </div>
+                     <div class="news-card">
+                         <div class="news-card-header">
+                             <h3 class="news-card-title">Новые наборы Star Wars уже в продаже</h3>
+                             <span class="news-card-toggle">+</span>
+                         </div>
+                         <div class="news-card-body">
+                             <p class="news-card-excerpt">В нашем магазине появились долгожданные новые наборы LEGO Star Wars 2026 года. Коллекция включает реплики знаменитых космических кораблей — от X-wing до гигантского Star Destroyer, а также детализированные сцены из эпических фильмов. Особое внимание стоит уделить限量-изданиям (limited edition), которые уже разлетаются как горячие пирожки. Торопитесь, количество эксклюзивных коробок ограничено, а alcuni-наборы могут быстро закончиться!</p>
+                         </div>
+                     </div>
+
+                </div>
+        </section>
+
+                <!--История-->
+                <section class="history-column">
+                    <div class="history-content">
+                        <h2 class="section-title">История LEGO</h2>
+                        <h3 class="section-subtitle">От деревянных игрушек к мировой империи</h3>
+                        <div class="history-text">
+                            <p>Основанная в 1932 году в Дании Оле Кирком Кристиансеном, компания начала свой путь с производства деревянных игрушек. Название «LEGO» появилось позже и образовано от датской фразы «leg godt», что означает «играть хорошо».</p>
+                            <p>Крутой поворот в истории произошел в 1947 году, когда компания стала одной из первых в Дании, купившей станок для литья пластика. Это позволило запустить производство пластиковых игрушек. В 1949 году вышел Automatic Binding Brick — предшественник современного кирпичика. Но настоящая революция случилась в 1958 году, когда был запатентован современный дизайн с внутренними трубками.</p>
+                            <p>Сегодня LEGO Group — это одна из самых известных в мире игрушек, объединяющая поколения. Конструкторы LEGO развивают моторику, фантазию и инженерное мышление у детей и взрослых. Ежегодно компания выпускает сотни новых наборов, от масштабных архитектурных моделей до лицензированных тематических сетов.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!--JavaScript-->
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
+
