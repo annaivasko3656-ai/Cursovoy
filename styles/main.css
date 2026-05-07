@@ -732,7 +732,8 @@ body.page-help section.catalog .question-content p {
 @media (max-width: 1024px) {
     .cart-table {
         width: 30%;
-        padding: var(--spacing-xs);
+        padding:0;
+        gap:0;
     }
 }
 .cart-table th {
