@@ -16,10 +16,6 @@
     --radius-lg: 16px;
     --radius-full: 50%;
 }
-
-/* ============================================
-   Base Styles (only custom overrides)
-   ============================================ */
 body {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -63,17 +59,12 @@ p {
 .text-center {
     text-align: center;
 }
-
-/* ============================================
-   Layout Components
-   ============================================ */
 .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
-/* Header */
 .header {
     background: var(--primary-red);
     padding: var(--spacing-md) 0;
@@ -480,9 +471,6 @@ body.page-help section.catalog .question-content p {
     padding-right: var(--spacing-md);
 }
 
-/* Homepage Two Columns Layout */
-
-
 .section-title {
     font-size: 2rem;
     color: black;
@@ -680,7 +668,6 @@ body.page-help section.catalog .question-content p {
     opacity: 0.9;
 }
 
-/* Catalog */
 .catalog {
     padding: var(--spacing-xl) 0;
 }
@@ -881,8 +868,6 @@ body.page-help section.catalog .question-content p {
     background: var(--gray-light);
     border-radius: var(--radius-lg);
 }
-
-/* Contact Form */
 .contact-form {
     max-width: 500px;
 }
@@ -898,7 +883,6 @@ body.page-help section.catalog .question-content p {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Utilities */
 .mb-0 { margin-bottom: 0; }
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
@@ -941,10 +925,6 @@ body.page-help section.catalog .question-content p {
     animation: spin 1s linear infinite;
     margin: 0 auto var(--spacing-sm);
 }
-
-
-
-/* Accessibility */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -961,8 +941,6 @@ body.page-help section.catalog .question-content p {
     outline: 3px solid var(--primary-yellow);
     outline-offset: 2px;
 }
-
-/* Product Card - ВОССТАНОВЛЕННЫЕ СТИЛИ */
 .product-card {
     background: white;
     border: 2px solid var(--gray-medium);
@@ -1039,24 +1017,18 @@ body.page-help section.catalog .question-content p {
     background: #e6c200;
     transform: translateY(-2px);
 }
-
-/* Сетка каталога */
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
-
-/* Для карточек в секции featured */
 .featured-section .catalog-grid {
     text-decoration: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--spacing-lg);
 }
-
-/* Адаптивность карточек */
 @media (max-width: 768px) {
     .catalog-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
