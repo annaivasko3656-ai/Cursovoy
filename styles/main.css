@@ -735,6 +735,25 @@ body.page-help section.catalog .question-content p {
         padding:0;
         gap:0;
     }
+     .cart-table th,
+    .cart-table td {
+        padding: var(--spacing-sm);
+    }
+    
+    /* Меньше отступы у корзины */
+    .cart {
+        padding: var(--spacing-md) 0;
+    }
+    
+    /* Меньше отступы у блока суммы */
+    .cart-summary {
+        padding: var(--spacing-md);
+    }
+    
+    /* Меньше отступы между строками суммы */
+    .cart-summary-row {
+        margin-bottom: var(--spacing-xs);
+    }
 }
 .cart-table th {
     text-align: left;
