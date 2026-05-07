@@ -1,0 +1,1331 @@
+// ============================================
+//   SCSS Variables & Maps
+// ============================================
+
+// Color Palette
+$colors: (
+    primary-yellow: #FFD700,
+    primary-red: #E3000B,
+    dark-gray: #77b6e9,
+    gray-light: #F5F5F5,
+    gray-medium: #E0E0E0,
+    gray-dark: #2F2F2F,
+    white: #fff,
+    black: #000
+);
+
+// Spacing Scale
+$spacing: (
+    xs: 0.5rem,
+    sm: 1rem,
+    md: 1.5rem,
+    lg: 2rem,
+    xl: 3rem,
+    xxl: 5rem
+);
+
+// Border Radius
+$radius: (
+    sm: 4px,
+    md: 8px,
+    lg: 16px,
+    full: 50%
+);
+
+// Typography
+$font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$font-sizes: (
+    h1: 2.5rem,
+    h2: 2rem,
+    h3: 1.5rem,
+    base: 1rem,
+    small: 0.875rem
+);
+
+// Breakpoints
+$breakpoints: (
+    sm: 320px,
+    md: 768px,
+    lg: 992px,
+    xl: 1024px
+);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Helper Functions
+@function get-color($key) {
+    @return map-get($colors, $key);
+}
+
+@function get-spacing($key) {
+    @return map-get($spacing, $key);
+}
+
+@function get-radius($key) {
+    @return map-get($radius, $key);
+}
+
+// ============================================
+//   SCSS Mixins
+// ============================================
+
+// Responsive breakpoint mixin
+@mixin respond-to($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @if $value {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-to-max($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    @if $value {
+        @media (max-width: $value) {
+            @content;
+        }
+    }
+}
+
+// Button base styles
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: get-spacing(sm);
+    padding: get-spacing(sm) get-spacing(lg);
+    font-weight: 600;
+    font-size: map-get($font-sizes, base);
+    border-radius: get-radius(md);
+    border: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all $transition-normal;
+    font-family: $font-family;
+}
+
+// Card base styles
+@mixin card-base {
+    border: 2px solid get-color(gray-medium);
+    border-radius: get-radius(lg);
+    transition: border-color $transition-normal, box-shadow $transition-normal;
+    
+    &:hover {
+        border-color: get-color(primary-yellow);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+}
+
+// Focus visible styles
+@mixin focus-visible {
+    *:focus-visible {
+        outline: 3px solid get-color(primary-yellow);
+        outline-offset: 2px;
+    }
+}
+
+// ============================================
+//   CSS Custom Properties (for runtime use)
+// ============================================
+:root {
+    @each $name, $value in $colors {
+        --#{$name}: #{$value};
+    }
+    
+    @each $name, $value in $spacing {
+        --spacing-#{$name}: #{$value};
+    }
+    
+    @each $name, $value in $radius {
+        --radius-#{$name}: #{$value};
+    }
+}
+
+// ============================================
+//   Base Styles
+// ============================================
+body {
+    font-family: $font-family;
+    font-size: map-get($font-sizes, base);
+    line-height: 1.5;
+    color: get-color(black);
+    background-color: get-color(white);
+
+    a {
+        color: get-color(primary-yellow);
+        text-decoration: none;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: darken(get-color(primary-yellow), 15%);
+        }
+    }
+
+    button {
+        @include button-base;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    h1 {
+        font-size: map-get($font-sizes, h1);
+        margin-bottom: get-spacing(md);
+    }
+
+    h2 {
+        font-size: map-get($font-sizes, h2);
+        margin-bottom: get-spacing(md);
+    }
+
+    h3 {
+        font-size: map-get($font-sizes, h3);
+        margin-bottom: get-spacing(sm);
+    }
+
+    p {
+        margin-bottom: get-spacing(sm);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+}
+
+// ============================================
+//   Layout Components
+// ============================================
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 get-spacing(md);
+}
+
+// Header
+.header {
+    background: get-color(primary-red);
+    padding: get-spacing(md) 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+
+    &-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: get-spacing(md);
+    }
+
+    &-logo {
+        text-decoration: none;
+        color: get-color(primary-yellow);
+        font-weight: 900;
+        font-size: 1.25rem;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        gap: get-spacing(sm);
+
+        span.logo {
+            font-size: larger;
+        }
+    }
+
+    &-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, get-color(primary-yellow) 0%, get-color(primary-red) 100%);
+        padding: get-spacing(md);
+        flex-direction: column;
+        gap: get-spacing(sm);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        display: none;
+
+        &-link {
+            color: get-color(white);
+            padding: get-spacing(xs) get-spacing(sm);
+            border-radius: get-radius(sm);
+            transition: background-color $transition-fast;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+
+        @include respond-to(md) {
+            position: static;
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+            flex-direction: row;
+            display: flex !important;
+            gap: get-spacing(lg);
+        }
+    }
+
+    &-cart {
+        position: relative;
+        background: rgba(255, 255, 255, 0.2);
+        padding: get-spacing(xs) get-spacing(sm);
+        border-radius: get-radius(md);
+        transition: background-color $transition-fast;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: get-color(white);
+        }
+
+        &-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: get-color(primary-yellow);
+            color: get-color(black);
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: get-radius(full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &-mobile-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        padding: get-spacing(xs);
+        cursor: pointer;
+
+        span {
+            width: 24px;
+            height: 2px;
+            background: get-color(black);
+            border-radius: 2px;
+            transition: transform $transition-normal;
+        }
+
+        @include respond-to(md) {
+            display: none;
+        }
+    }
+
+    &-logo svg {
+        display: block;
+        max-height: 54px;
+        width: auto;
+    }
+}
+
+// ============================================
+//   Footer
+// ============================================
+.footer {
+    background: get-color(dark-gray);
+    color: get-color(white);
+    padding: get-spacing(xl) 0 get-spacing(md);
+    margin-top: get-spacing(xxl);
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: get-spacing(lg);
+
+        @include respond-to(md) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &-section {
+        margin-bottom: get-spacing(lg);
+    }
+
+    &-section-title {
+        color: get-color(white);
+        font-size: 1.1rem;
+        border-bottom: 2px solid get-color(white);
+        padding-bottom: get-spacing(xs);
+        margin-bottom: get-spacing(md);
+    }
+
+    &-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: get-spacing(xs);
+        }
+
+        a {
+            color: get-color(gray-medium);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color $transition-fast;
+
+            &:hover {
+                color: get-color(primary-yellow);
+            }
+        }
+    }
+
+    &-social {
+        display: flex;
+        gap: get-spacing(md);
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                flex-shrink: 0;
+                transition: transform $transition-fast;
+
+                &:hover {
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+
+    &-contact-item {
+        margin-bottom: get-spacing(md);
+        color: get-color(gray-medium);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: get-color(primary-red);
+            flex-shrink: 0;
+        }
+    }
+
+    &-bottom {
+        margin-top: get-spacing(xl);
+        padding-top: get-spacing(md);
+        border-top: 1px solid get-color(gray-medium);
+        text-align: center;
+        color: get-color(gray-medium);
+        font-size: 0.9rem;
+    }
+}
+
+// ============================================
+//   Components
+// ============================================
+// Category Card
+.category-card {
+    @include card-base;
+    padding: get-spacing(lg);
+    text-align: center;
+
+    p {
+        color: get-color(gray-dark);
+        margin-bottom: get-spacing(md);
+    }
+}
+
+// Sections
+.categories-section,
+.featured-section,
+.advantages-section,
+.news-section {
+    padding: get-spacing(xxl);
+}
+
+// Advantages Section
+.advantages-section {
+    .catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: get-spacing(lg);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .card {
+            @include card-base;
+        }
+
+        @include respond-to-max(xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to-max(640px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// News Accordion
+.news-accordion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: get-spacing(sm);
+    width: 100%;
+
+    @include respond-to-max(xl) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to-max(640px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.news-card {
+    border: 1.2px solid get-color(gray-medium);
+    border-radius: get-radius(md);
+    overflow: hidden;
+    transition: all 3s ease;
+    max-height: 60px;
+
+    &-header {
+        display: flex;
+        justify-content: center;
+        padding: get-spacing(md);
+        padding-bottom: 0;
+    }
+
+    &-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: get-color(dark-gray);
+        margin: 0 auto;
+        line-height: 1.3;
+    }
+
+    &-body {
+        overflow: hidden;
+
+        p {
+            text-indent: 2rem;
+            line-height: 1.6;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover {
+        border-color: get-color(primary-red);
+        max-height: 1000px;
+        transition-duration: 3s;
+    }
+}
+
+.news-column {
+    padding: get-spacing(xl);
+    border-radius: get-radius(lg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+// ============================================
+//   Buttons & Forms
+// ============================================
+.btn,
+.btn-primary {
+    @include button-base;
+    transition: all 1s ease;
+}
+
+.btn-primary {
+    background-color: get-color(primary-red);
+}
+
+// FAQ Styles
+body.page-help {
+    section.catalog {
+        .catalog-grid {
+            max-width: 800px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .faq-card {
+            border: 1px solid get-color(gray-medium);
+            border-radius: get-radius(lg);
+            transition: border-color 0.7s ease, box-shadow 0.7s ease;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+            &:hover {
+                border-color: get-color(primary-yellow);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        .question-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: get-spacing(md);
+            border: none;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+            text-align: left;
+
+            .chevron {
+                margin-left: auto;
+                transition: transform $transition-normal;
+            }
+
+            .card-title {
+                margin: 0;
+                text-align: left;
+                padding-left: get-spacing(md);
+                display: inline-flex;
+                align-items: center;
+                gap: get-spacing(sm);
+            }
+
+            svg {
+                transition: transform $transition-normal;
+                flex-shrink: 0;
+            }
+
+            &[aria-expanded="true"] .chevron {
+                transform: rotate(180deg);
+            }
+        }
+
+        .question-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height $transition-slow;
+            margin-top: get-spacing(md);
+
+            p {
+                color: get-color(gray-dark);
+                line-height: 1.6;
+                margin-bottom: 0;
+                text-align: left;
+                padding-left: get-spacing(md);
+                padding-right: get-spacing(md);
+            }
+        }
+    }
+}
+
+// ============================================
+//   Homepage Styles
+// ============================================
+.section-title {
+    font-size: 2rem;
+    color: get-color(black);
+    margin-bottom: get-spacing(lg);
+    border-bottom: 4px solid get-color(primary-red);
+    padding-bottom: get-spacing(xs);
+    display: inline-block;
+}
+
+// History Column
+.history-content {
+    background: get-color(white);
+    padding: get-spacing(xl);
+    border-radius: get-radius(lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    .history-text {
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: get-spacing(md);
+
+            &:first-of-type::first-letter {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: get-color(primary-yellow);
+                float: left;
+                line-height: 0.8;
+                margin-right: 8px;
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+// ============================================
+//   Product Card
+// ============================================
+.product-card {
+    background: get-color(white);
+    @include card-base;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+
+    &-image {
+        width: 90%;
+        height: 200px;
+        object-fit: contain;
+        align-self: center;
+        background: get-color(gray-light);
+        transition: transform $transition-normal;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &-button {
+        margin-top: auto;
+        background: get-color(primary-yellow);
+        color: get-color(black);
+        border: none;
+        padding: get-spacing(sm);
+        font-weight: 600;
+        border-radius: get-radius(md);
+        cursor: pointer;
+        transition: all $transition-normal;
+        align-self: center;
+
+        &:hover {
+            background: darken(get-color(primary-yellow), 10%);
+            transform: translateY(-2px);
+        }
+    }
+
+    .add-to-cart {
+        margin-top: auto;
+        align-self: center;
+        background: get-color(primary-yellow);
+        color: get-color(black);
+        border: none;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        border-radius: get-radius(md);
+        cursor: pointer;
+        transition: all $transition-normal;
+        margin-bottom: get-spacing(md);
+        min-width: 140px;
+
+        &:hover {
+            background: darken(get-color(primary-yellow), 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        &.in-cart {
+            background: #28a745;
+            color: get-color(white);
+            cursor: default;
+        }
+    }
+
+    h3 {
+        margin: get-spacing(md) get-spacing(md) 0;
+        font-size: map-get($font-sizes, h3);
+        line-height: 1.3;
+    }
+
+    .price {
+        margin: get-spacing(xs) get-spacing(md);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: get-color(primary-red);
+    }
+
+    .card-image {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: get-radius(full);
+    }
+}
+
+// ============================================
+//   Hero Section
+// ============================================
+.hero {
+    background: get-color(primary-yellow);
+    padding: get-spacing(xxl) 0;
+
+    &-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 get-spacing(md);
+        display: flex;
+        justify-content: space-between;
+        gap: get-spacing(xl);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &-content {
+        flex: 1;
+        padding: get-spacing(lg);
+        text-align: left;
+        min-width: 300px;
+    }
+
+    &-image {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-title {
+        color: get-color(primary-red);
+        font-size: 2rem;
+        margin-bottom: get-spacing(md);
+        font-weight: 700;
+
+        @include respond-to(md) {
+            font-size: 3rem;
+        }
+    }
+
+    &-subtitle {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 0 get-spacing(lg);
+        opacity: 0.9;
+        text-align: left;
+    }
+
+    &-cta {
+        display: flex;
+        flex-direction: column;
+        gap: get-spacing(sm);
+        align-items: flex-start;
+
+        @include respond-to(sm) {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: get-spacing(md);
+            align-items: flex-start;
+        }
+    }
+}
+
+.shop,
+.shop2 {
+    border-radius: get-radius(full);
+    width: 250px;
+    height: 250px;
+    max-height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    transition: transform $transition-normal;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.shop2 {
+    right: 12%;
+    position: relative;
+    width: 350px;
+    height: 350px;
+
+    @include respond-to-max(xl) {
+        display: none;
+    }
+}
+
+// ============================================
+//   Page Header
+// ============================================
+.page-header {
+    background: get-color(primary-yellow);
+    padding: get-spacing(xl) 0;
+    text-align: center;
+
+    h1 {
+        color: get-color(primary-red);
+        margin-bottom: get-spacing(md);
+    }
+
+    p {
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+        font-size: 1.1rem;
+    }
+}
+
+// ============================================
+//   Catalog
+// ============================================
+.catalog {
+    padding: get-spacing(xl) 0;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: get-spacing(lg);
+        flex-wrap: wrap;
+        gap: get-spacing(md);
+    }
+
+    &-title {
+        flex: 1;
+    }
+
+    &-filters {
+        display: flex;
+        gap: get-spacing(sm);
+        flex-wrap: wrap;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: get-spacing(lg);
+        margin-top: get-spacing(lg);
+        transition: gap $transition-normal;
+
+        @include respond-to(md) {
+            gap: get-spacing(md);
+        }
+
+        @include respond-to(480px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// Form Select
+.form-select {
+    padding: get-spacing(sm) get-spacing(md);
+    border: 1px solid get-color(gray-medium);
+    border-radius: get-radius(md);
+    background-color: get-color(white);
+    font-family: $font-family;
+    font-size: map-get($font-sizes, base);
+    color: get-color(black);
+    transition: border-color $transition-fast;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.5rem;
+
+    &:focus {
+        outline: none;
+        border-color: get-color(primary-yellow);
+        box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+    }
+}
+
+// ============================================
+//   Cart Page
+// ============================================
+.cart {
+    padding: get-spacing(xl) 0;
+
+    &-empty {
+        text-align: center;
+        padding: get-spacing(xxl) 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: get-spacing(md);
+
+        svg {
+            width: 120px;
+            height: 120px;
+            fill: get-color(gray-medium);
+        }
+    }
+
+    &-layout {
+        display: flex;
+        flex-direction: column;
+        gap: get-spacing(xl);
+        align-items: flex-start;
+
+        @include respond-to(lg) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    &-table {
+        width: 100%;
+        border-collapse: collapse;
+        flex: 1;
+
+        th {
+            text-align: left;
+            padding: get-spacing(md);
+            border-bottom: 2px solid get-color(gray-medium);
+            font-weight: 600;
+            color: get-color(black);
+        }
+
+        td {
+            padding: get-spacing(md);
+            border-bottom: 1px solid get-color(gray-light);
+            vertical-align: middle;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: get-radius(md);
+        }
+    }
+
+    &-product-name {
+        font-weight: 600;
+        display: block;
+        margin-bottom: get-spacing(xs);
+        color: get-color(black);
+    }
+
+    &-product-category {
+        font-size: 0.875rem;
+        color: get-color(gray-dark);
+    }
+
+    &-quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: get-spacing(xs);
+
+        &-btn {
+            width: 32px;
+            height: 32px;
+            border: 1px solid get-color(gray-medium);
+            background: get-color(white);
+            border-radius: get-radius(sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color $transition-fast;
+
+            &:hover {
+                background: get-color(gray-light);
+            }
+        }
+    }
+
+    &-remove-btn {
+        color: get-color(primary-red);
+        background: none;
+        border: none;
+        padding: get-spacing(xs);
+        cursor: pointer;
+        transition: text-decoration $transition-fast;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &-summary {
+        min-width: 320px;
+        background: get-color(gray-light);
+        padding: get-spacing(lg);
+        border-radius: get-radius(lg);
+        align-self: flex-start;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+        @include respond-to(lg) {
+            position: sticky;
+            top: 120px;
+        }
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: get-spacing(sm);
+            color: get-color(black);
+        }
+
+        &-total {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: get-color(primary-red);
+            border-top: 2px solid get-color(gray-medium);
+            padding-top: get-spacing(sm);
+            margin-top: get-spacing(sm);
+        }
+    }
+
+    &-actions {
+        width: 100%;
+        margin-top: get-spacing(lg);
+        display: flex;
+        justify-content: center;
+        gap: get-spacing(md);
+        flex-wrap: wrap;
+    }
+}
+
+// ============================================
+//   Contacts Page
+// ============================================
+.contacts {
+    padding: get-spacing(xl) 0;
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: get-spacing(xl);
+
+        @include respond-to(xl) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: get-spacing(lg);
+    }
+
+    &-item {
+        display: flex;
+        align-items: flex-start;
+        gap: get-spacing(md);
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: get-color(primary-red);
+            flex-shrink: 0;
+        }
+    }
+
+    &-map {
+        min-height: 400px;
+        background: get-color(gray-light);
+        border-radius: get-radius(lg);
+    }
+}
+
+// Contact Form
+.contact-form {
+    max-width: 500px;
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: get-spacing(md);
+        margin-bottom: get-spacing(md);
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid get-color(gray-medium);
+            border-radius: get-radius(sm);
+            font-family: $font-family;
+            font-size: map-get($font-sizes, base);
+            transition: border-color $transition-fast, box-shadow $transition-fast;
+
+            &:focus {
+                outline: none;
+                border-color: get-color(primary-yellow);
+                box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+            }
+
+            &::placeholder {
+                color: get-color(gray-medium);
+            }
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+    }
+}
+
+// ============================================
+//   Utilities
+// ============================================
+// Spacing utilities
+@each $size, $value in $spacing {
+    .mb-#{$size} { margin-bottom: $value; }
+    .mt-#{$size} { margin-top: $value; }
+    .p-#{$size} { padding: $value; }
+}
+
+// Text utilities
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+// Display utilities
+.d-flex { display: flex; }
+.d-none { display: none; }
+.d-grid { display: grid; }
+
+// ============================================
+//   Animations
+// ============================================
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.4s ease forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid get-color(gray-light);
+    border-top-color: get-color(primary-yellow);
+    border-radius: get-radius(full);
+    animation: spin 1s linear infinite;
+    margin: 0 auto get-spacing(sm);
+}
+
+// ============================================
+//   Accessibility
+// ============================================
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@include focus-visible;
+
+// ============================================
+//   Featured Section Grid Override
+// ============================================
+.featured-section .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: get-spacing(lg);
+}
+
+// ============================================
+//   Media Query Mixins for Specific Components
+// ============================================
+@mixin catalog-grid-mobile {
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: get-spacing(md);
+        
+        .product-card-title {
+            font-size: 1rem;
+            min-height: auto;
+        }
+        
+        .product-card-price {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.advantages-section {
+    @include catalog-grid-mobile;
+}
+
+// Print styles
+@media print {
+    .header,
+    .footer,
+    .cart-actions,
+    .btn {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+}
