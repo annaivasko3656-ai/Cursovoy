@@ -729,7 +729,11 @@ body.page-help section.catalog .question-content p {
     width: 60%;
     border-collapse: collapse;
 }
-
+@media (max-width: 1024px) {
+    .cart-table {
+        width: 40%;
+    }
+}
 .cart-table th {
     text-align: left;
     padding: var(--spacing-md);
