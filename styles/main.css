@@ -146,8 +146,6 @@ p {
     background: black;
     border-radius: 2px;
 }
-
-/* Mobile Navigation */
 .header-nav {
     position: absolute;
     top: 100%;
@@ -185,8 +183,6 @@ p {
         display: flex !important;
     }
 }
-
-/* Footer */
 .footer {
     background: var(--dark-gray);
     color: white;
@@ -265,9 +261,6 @@ p {
     color: var(--gray-medium);
     font-size: 0.9rem;
 }
-
-
-/* Category Card */
 .category-card {
     border: 2px solid var(--gray-medium);
     border-radius: var(--radius-lg);
@@ -405,7 +398,6 @@ p {
 .btn-primary{
     background-color: var(--primary-red);
 }
-/* FAQ Styles */
 body.page-help section.catalog .catalog-grid {
     max-width: 800px;
     margin-left: 0;
@@ -506,8 +498,6 @@ body.page-help section.catalog .question-content p {
     margin-right: 8px;
     margin-top: 4px;
 }
-
-/* Product Card */
 .product-card {
     border: 2px solid var(--gray-medium);
     border-radius: var(--radius-lg);
@@ -650,7 +640,11 @@ body.page-help section.catalog .question-content p {
     height: 350px;
     object-fit: cover;
 }
-/* Page Header */
+@media (max-width: 1024px) {
+    .shop2 {
+        display: none;
+    }
+}
 .page-header {
     background: var(--primary-yellow);
     padding: var(--spacing-xl) 0;
@@ -696,8 +690,6 @@ body.page-help section.catalog .question-content p {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--spacing-lg);
 }
-
-/* Form Select */
 .form-select {
     padding: var(--spacing-sm) var(--spacing-md);
     border: 1px solid var(--gray-medium);
@@ -714,8 +706,6 @@ body.page-help section.catalog .question-content p {
     border-color: var(--primary-yellow);
     box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
 }
-
-/* Cart Page */
 .cart {
     padding: var(--spacing-xl) 0;
 }
@@ -811,9 +801,6 @@ body.page-help section.catalog .question-content p {
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
 }
-
-
-
 .cart-summary-row {
     display: flex;
     justify-content: space-between;
@@ -826,8 +813,6 @@ body.page-help section.catalog .question-content p {
     color: var(--primary-red);
     border-top: 2px solid var(--gray-medium);
 }
-
-/* Contacts Page */
 .contacts {
     padding: var(--spacing-xl) 0;
 }
