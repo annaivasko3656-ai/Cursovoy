@@ -1192,6 +1192,6 @@ body.page-help section.catalog .question-content p {
 }
 @media (max-width: 1024px) {
     .hello{
-       visibility: hidden; !important
+      display: none !important;
     }
 }
