@@ -1190,3 +1190,8 @@ body.page-help section.catalog .question-content p {
         display: table-cell;
     }
 }
+@media (max-width: 1024px) {
+    .hello{
+        display: none;
+    }
+}
