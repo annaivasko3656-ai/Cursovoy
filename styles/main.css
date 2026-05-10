@@ -1176,6 +1176,7 @@ body.page-help section.catalog .question-content p {
     .cart-table-wrapper {
         overflow-x: auto;
         width: 100%;
+        background-color: red;
     }
     
     .cart-table {
