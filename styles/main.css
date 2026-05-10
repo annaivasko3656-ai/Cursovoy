@@ -1102,3 +1102,33 @@ body.page-help section.catalog .question-content p {
         min-width: 250px; /* Минимальная ширина на мобильных */
     }
 }
+/* Переопределяем отступы для секции с рекомендуемыми наборами */
+.featured-section .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.featured-section .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    justify-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md); /* Добавляем отступы только по бокам */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .featured-section .catalog-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        width: 100%;
+    }
+    
+    .featured-section .product-card {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
