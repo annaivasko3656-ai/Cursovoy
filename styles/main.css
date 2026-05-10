@@ -1230,3 +1230,14 @@ body.page-help section.catalog .question-content p {
     margin: 0 auto;
     width: 100%;
 }
+/* ВРЕМЕННО - для поиска проблемы */
+.featured-section,
+.featured-section * {
+    outline: 1px solid rgba(255,0,0,0.3);
+}
+.featured-section .container {
+    outline: 2px solid blue;
+}
+.featured-section .catalog-grid {
+    outline: 2px solid green;
+}
