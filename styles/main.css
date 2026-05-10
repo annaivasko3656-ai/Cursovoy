@@ -1153,3 +1153,22 @@ body.page-help section.catalog .question-content p {
         max-width: 300px;
     }
 } 
+.categories-section .catalog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.categories-section .category-card {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .categories-section .category-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
