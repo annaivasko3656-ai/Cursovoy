@@ -1170,15 +1170,13 @@ body.page-help section.catalog .question-content p {
     .categories-section .category-card {
         width: 90%;
         max-width: 300px;
-        font-size: 10px;
+        margin: 10px;
     }
 }
 @media (max-width: 1024px) {
     /* Скрываем цену и количество */
     .cart-table th:nth-child(2),
-    .cart-table th:nth-child(3),
-    .cart-table td:nth-child(2),
-    .cart-table td:nth-child(3) {
+    .cart-table td:nth-child(2){
         display: none;
     }
     
