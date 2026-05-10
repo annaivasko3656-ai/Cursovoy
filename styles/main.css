@@ -1173,21 +1173,20 @@ body.page-help section.catalog .question-content p {
         font-size: 1rem;
     }
 }
-/* На мобильных добавлем горизонтальную прокрутку */
 @media (max-width: 1024px) {
-    .cart-content {
-        overflow-x: auto;
+    /* Скрываем цену и количество */
+    .cart-table th:nth-child(2),
+    .cart-table th:nth-child(3),
+    .cart-table td:nth-child(2),
+    .cart-table td:nth-child(3) {
+        display: none;
     }
     
-    .cart-table {
-        min-width: 600px;
-        width: 100%;
-    }
-    
-    /* Убираем только для совсем маленьких */
-    @media (max-width: 640px) {
-        .cart-table {
-            min-width: 500px;
-        }
+    /* Показываем сумму и удаление */
+    .cart-table th:nth-child(4),
+    .cart-table th:nth-child(5),
+    .cart-table td:nth-child(4),
+    .cart-table td:nth-child(5) {
+        display: table-cell;
     }
 }
