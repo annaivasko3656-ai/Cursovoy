@@ -1160,3 +1160,45 @@ body.page-help section.catalog .question-content p {
         max-width: 300px;
     }
 }
+/* Финальное исправление - полный сброс отступов для секции */
+.featured-section {
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.featured-section .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.featured-section .catalog-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: var(--spacing-lg) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 var(--spacing-md) !important;
+    box-sizing: border-box !important;
+}
+
+.featured-section .product-card {
+    flex: 0 0 auto !important;
+    width: 280px !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .featured-section .catalog-grid {
+        padding: 0 var(--spacing-sm) !important;
+    }
+    
+    .featured-section .product-card {
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+}
