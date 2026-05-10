@@ -1132,3 +1132,31 @@ body.page-help section.catalog .question-content p {
         margin: 0 auto;
     }
 }
+/* Полностью сбрасываем выравнивание для этой секции */
+.featured-section {
+    text-align: center;
+}
+
+.featured-section .catalog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.featured-section .product-card {
+    flex: 0 0 auto;
+    width: 280px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .featured-section .product-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
