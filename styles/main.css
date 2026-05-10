@@ -1170,6 +1170,7 @@ body.page-help section.catalog .question-content p {
     .categories-section .category-card {
         width: 90%;
         max-width: 300px;
+        font-size: 1rem;
     }
 }
 /* На мобильных добавлем горизонтальную прокрутку */
