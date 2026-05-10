@@ -1172,3 +1172,14 @@ body.page-help section.catalog .question-content p {
         max-width: 300px;
     }
 }
+@media (max-width: 1024px) {
+    .cart-table-wrapper {
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    .cart-table {
+        min-width: 600px; /* Минимальная ширина, чтобы всё поместилось */
+        width: 100%;
+    }
+}
