@@ -2,10 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="data/products.xsl"?>
 <store name="LEGO Беларусь" location="Минск" currency="BYN">
     <categories>
-        <category id="1" name="Конструкторы LEGO City" slug="city"/>
-        <category id="2" name="Конструкторы LEGO Star Wars" slug="star-wars"/>
-        <category id="3" name="Конструкторы LEGO Technic" slug="technic"/>
-        <category id="5" name="Конструкторы LEGO Friends" slug="friends"/>
+        <category id="1" name="LEGO City" slug="city"/>
+        <category id="2" name="LEGO Star Wars" slug="star-wars"/>
+        <category id="3" name="LEGO Technic" slug="technic"/>
+        <category id="5" name="LEGO Friends" slug="friends"/>
     </categories>
 
     <products>
