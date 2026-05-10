@@ -1172,15 +1172,21 @@ body.page-help section.catalog .question-content p {
         max-width: 300px;
     }
 }
+/* На мобильных добавлем горизонтальную прокрутку */
 @media (max-width: 1024px) {
-    .cart-table-wrapper {
+    .cart-content {
         overflow-x: auto;
-        width: 100%;
-        background-color: red;
     }
     
     .cart-table {
-        min-width: 600px; /* Минимальная ширина, чтобы всё поместилось */
+        min-width: 600px;
         width: 100%;
+    }
+    
+    /* Убираем только для совсем маленьких */
+    @media (max-width: 640px) {
+        .cart-table {
+            min-width: 500px;
+        }
     }
 }
