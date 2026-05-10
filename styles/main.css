@@ -310,8 +310,6 @@ p {
 @media (max-width: 1024px) {
     .advantages-section .catalog-grid {
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 0;
-        padding-left:0;
     }
 }
 
@@ -442,11 +440,6 @@ body.page-help section.catalog .question-toggle .card-title {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-sm);
-}
-@media (max-width: 1024px) {
-    body.page-help section.catalog  {
-         padding-left: 0;
-    }
 }
 body.page-help section.catalog .question-toggle svg {
     transition: transform 0.3s ease;
